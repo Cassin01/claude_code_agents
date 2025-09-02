@@ -4,13 +4,15 @@ A collection of specialized agents for comprehensive software development workfl
 
 ## Overview
 
-This repository contains five specialized agents designed to cover the complete software development lifecycle:
+This repository contains seven specialized agents designed to cover the complete software development lifecycle:
 
 - **🔍 Code Analyzer** - Analyzes code quality, performance, and best practices
 - **📋 Problem Analyzer Planner** - Breaks down complex problems into implementation plans  
 - **🔨 Task Planner Implementer** - Plans and executes development tasks
 - **📝 Code Reviewer** - Provides comprehensive code reviews
 - **🎯 Task Executor** - Coordinates execution of multiple sequential tasks
+- **📝 Commit Message Generator** - Creates structured commit messages with Japanese conventions
+- **🔀 PR Generator** - Generates properly formatted GitHub pull requests
 
 ## Agent Descriptions
 
@@ -57,6 +59,24 @@ This repository contains five specialized agents designed to cover the complete 
 - Sequential task coordination
 - Progress tracking across complex workflows
 
+### Commit Message Generator (`commit-message-generator.md`)
+**Purpose**: Create structured commit messages following Japanese conventions  
+**Tools**: Full tool access  
+**Use Cases**:
+- Generate proper commit messages after code changes
+- Follow Japanese commit message conventions with type categorization
+- Analyze git diff to create contextual commit messages
+- Ensure structured body content with background and reasoning
+
+### PR Generator (`pr-generator.md`)
+**Purpose**: Create properly formatted GitHub pull requests with Japanese conventions  
+**Tools**: Full tool access  
+**Use Cases**:
+- Generate GitHub pull requests with Japanese titles and descriptions
+- Analyze commit history to create appropriate PR content
+- Follow structured formatting with draft status and review checkboxes
+- Create gh CLI commands for manual execution
+
 ## Usage Patterns
 
 ### Single Task Development
@@ -72,6 +92,11 @@ Task Executor → (Task Planner Implementer → Code Reviewer) × N
 ### Code Quality Assessment
 ```
 Code Analyzer (can be used independently or as part of review process)
+```
+
+### Git Operations
+```
+Commit Message Generator → PR Generator
 ```
 
 ## Agent Capabilities
@@ -94,6 +119,12 @@ Code Analyzer (can be used independently or as part of review process)
 - Security vulnerability assessment
 - Performance optimization analysis
 - Code maintainability evaluation
+
+### Git Workflow Integration
+- Structured commit message generation with Japanese conventions
+- GitHub pull request creation with proper formatting
+- Draft PR generation with review checklists
+- Commit history analysis for contextual messaging
 
 ## Technical Standards
 
@@ -120,5 +151,7 @@ The agents are designed to work together seamlessly:
 - **Task Planner Implementer** handles tactical execution
 - **Code Reviewer** ensures quality standards
 - **Code Analyzer** provides ongoing quality assessment
+- **Commit Message Generator** creates structured commit messages
+- **PR Generator** handles pull request formatting and submission
 
 Each agent maintains awareness of project context and follows established patterns for consistent, high-quality development outcomes.

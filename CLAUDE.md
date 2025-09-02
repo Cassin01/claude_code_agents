@@ -8,7 +8,7 @@ This is a Claude Code agents repository containing specialized agent definitions
 
 ## Agent Architecture
 
-The repository contains five specialized agents that work together in a comprehensive development workflow:
+The repository contains seven specialized agents that work together in a comprehensive development workflow:
 
 ### Core Agent Types
 
@@ -37,6 +37,18 @@ The repository contains five specialized agents that work together in a comprehe
    - Delegates individual tasks to task-planner-implementer
    - Maintains completion tracking and progress reporting
 
+### Git Operations Agents
+
+6. **pr-generator** (`pr-generator.md`) - Green agent with full tool access
+   - Creates properly formatted GitHub pull requests with Japanese conventions
+   - Analyzes commit history to generate appropriate PR titles and descriptions
+   - Follows structured formatting with draft status and review checkboxes
+
+7. **commit-message-generator** (`commit-message-generator.md`) - Blue agent with full tool access
+   - Generates structured commit messages following Japanese conventions
+   - Analyzes git diff and status to create contextual commit messages
+   - Ensures proper type categorization and detailed body content
+
 ### Agent Workflow Patterns
 
 The agents are designed to work in complementary workflows:
@@ -44,6 +56,7 @@ The agents are designed to work in complementary workflows:
 - **Implementation Phase**: task-planner-implementer → code-reviewer
 - **Multi-task Coordination**: task-executor → task-planner-implementer (repeated)
 - **Quality Assurance**: code-analyzer (ongoing)
+- **Git Operations**: commit-message-generator → pr-generator
 
 ## Project Context Awareness
 
@@ -70,5 +83,7 @@ The agents support a complete development lifecycle:
 3. Quality review and feedback (code-reviewer)
 4. Ongoing code analysis (code-analyzer)
 5. Multi-task coordination (task-executor)
+6. Commit message generation (commit-message-generator)
+7. Pull request creation (pr-generator)
 
 This agent ecosystem enables systematic, high-quality software development with built-in quality assurance and architectural consistency.
